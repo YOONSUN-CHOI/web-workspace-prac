@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var person = {
+		name : '홍길동',
+		phone : '010-1111-2222',
+		tostring : function() {
+			let msg = '';
+			for ( let key in this) {
+				if ((typeof this[key]) != 'function')
+					msg += key + ' : ' + this[key] + '<br>';
+			}
+			msg += '<hr>';
+			return msg;
+		}
+	};	
+	
+	function clone(obj){
+		let object = [];
+		for (let key in obj){
+			object[key]=obj[key];
+		}
+		return object;
+	}
+	
+	
+	//var person2 = person;  // 얕은복사. 참조하는것을 복사해서 같을것을 포인팅
+	document.write(person.tostring())
+	
+	
+	
+	var person2 ={};
+	for (let key in person){
+		person2[key]=person[key];
+	}
+	document.write(person2.tostring())
+	person2.phone="010-9999-8888";
+	document.write('수정 후 : '+person.tostring())
+	document.write('수정 후 : '+person2.tostring())
+	
+
+	var person3 = clone(person);
+	document.write(person3.tostring()) // func 만들기도 귀차나...
+	
+	var person4 = {...person}
+	document.write(person4.tostring()) 
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showinfo(){
+		/* 유일하게 form 태그는 document.form태그_name명.input태그_name명 으로 접근 가능!! */
+		let list = '';
+		let hobbys = document.inputform.hobby;
+		for(let i = 0 ; i <hobbys.length ; i++){
+			if(hobbys[i].checked)
+				list += hobbys[i].value+'\n'
+		}
+		alert(list);
+	}
+	function selectall(){
+		let hobbys = document.inputform.hobby;
+		for(let i = 0 ; i <hobbys.length ; i++){
+			hobbys[i].checked=true;
+		}
+	}
+	function deselectall(){
+		let hobbys = document.inputform.hobby;
+		for(let i = 0 ; i <hobbys.length ; i++){
+			hobbys[i].checked=false;
+		}
+	}
+	function toggle(check){
+		for(let i in document.inputform.hobby){
+			document.inputform.hobby[i].checked=check;
+		}
+	}
+	
+	function toggle(){
+		let hobbys = document.inputform.hobby;
+		/*
+		for(let i in hobbys){
+			hobbys[i].checked = (!hobbys[i].checked);
+		}
+		*/
+		
+		//하나라도 false 가 있으면 true로 바꾸기!
+		//false 하나도 없으면 모두 false
+		let check = false
+		for(let i = 0; i < hobbys.length; i++) {
+			if(!hobbys[i].checked) //false이면
+				check = true;
+		}	
+		
+		for(let i = 0; i < hobbys.length; i++) {
+			hobbys[i].checked = check
+		}
+	}
+</script>
+</head>
+<body>
+	<!--  단일은 radio. 복수는 checkbox -->
+	<form action="" name="inputform">   
+	<!-- 유일하게 form 태그는 document.form태그_name명.input태그_name명 으로 접근 가능!! -->
+		당신의 취미는?<br>
+		<input type="checkbox" name="hobby" value="음악감상">음악감상<br>
+		<input type="checkbox" name="hobby" value="영화감상">영화감상<br>
+		<input type="checkbox" name="hobby" value="등상">등산<br>
+		<input type="checkbox" name="hobby" value="게임">게임<br>
+	<!-- 	<input type="button" value="전체선택" onclick="selectall()">전체선택<br>
+		<input type="button" value="전체선택해제" onclick="deselectall()">전체선택해제<br> -->
+		<!--    <input type="button" value="전체선택" onclick="toggle(true)">전체선택<br>
+	    <input type="button" value="전체선택해제" onclick="toggle(false)">전체선택해제<br> -->		
+		<input type="button" value="전체선택/해제" onclick="toggle()"><br>  
+		<input type="button" value="결과보기" onclick="showinfo()"><br>  
+	</form>
+</body>
+</html>

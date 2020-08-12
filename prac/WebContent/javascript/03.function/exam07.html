@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var won = '1000원';
+	var dollar='1.75$';
+	document.write("Number : "+Number(won)+'<br>'); // Number는 숫자문자만 나와야함 아님 오류(NaN)
+	document.write('ParseInt : '+parseInt(won)+'<br>'); // 앞에 숫자인부분까지만 바꿔주나봄
+	document.write("Number : "+Number(dollar)+'<br>'); // Number는 숫자문자만 나와야함 아님 오류(NaN)
+	document.write('ParseInt : '+parseInt(dollar)+'<br>'); // 앞에 숫자인부분까지만 바꿔서 . 만나기 전 1만
+	document.write('ParseInt : '+parseFloat(dollar)+'<br>'); // 앞에 숫자인부분까지만 바꿔서 $ 만나기 전까지
+	
+	
+	
+	
+	document.write('<hr>');
+	var str="12345";
+	var num = Number(str); 
+	var num2 = parseInt(str); 
+	document.write(str + 100+'<br>');
+	document.write(num + 100+'<br>');
+	document.write(num2 + 100+'<br>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

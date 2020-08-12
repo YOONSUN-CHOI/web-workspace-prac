@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+try {
+	throw new Error("사용자에러!!!!")
+	let array = new Array(99999999999)
+} catch(e) {
+	alert('예외발생!!!!')
+	console.log(e.message)
+	
+	for(var i in e) {
+		alert(i + ' : ' + e[i] + '\n')
+	}
+}finally{
+	console.log('finally 부분이닷');
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

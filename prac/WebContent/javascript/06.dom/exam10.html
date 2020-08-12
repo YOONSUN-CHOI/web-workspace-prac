@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function checkForm() {
+	
+	let f = document.searchform
+	if(f.searchtype.selectedIndex == 0) {
+	//if(f.searchtype[0].selected) {
+		alert('검색항목을 선택하세요')
+		f.searchtype.focus(); //지금 입력하지 않은거 이거야! 이렇게 표시
+		return false
+	}
+	/*
+	if(f.searchword.value == "") {
+		alert('검색어를 입력하세요')
+		return false
+	}*/
+	
+	let words = ['', '제목', '작성자']
+	if(f.searchword.value == '') {		
+		alert('검색할 ' + words[f.searchtype.selectedIndex] + '을(를) 입력하세요');
+		f.searchword.focus(); //지금 입력하지 않은거 이거야! 이렇게 표시
+		return false
+	}
+	
+	if(f.searchword.value.length < 2){
+		alert("검색어는 2글자 이상 입력하세요")
+		f.searchword.focus(); //지금 길이 부족한거 이거야! 이렇게 표시
+		return false
+	}
+	
+	return true
+}
+</script>
+</head>
+<body>
+	<form action="http://www.naver.com" name="searchform" onsubmit="return checkForm()"> 
+		<!-- onsubmit : submit 허용하시겠습니까? 를 물어보는 것 true : 허용 -->
+		<select name="searchtype">
+			<!--  document.searchform.searchtype.selectedindex = 선택된번호 -->
+			<!--  document.searchform.searchtype.selectedindex = 선택된번호 -->
+			<option>선택하세요</option>
+			<option>제목</option>
+			<option>작성자</option>
+		</select>
+		<input type="text" name="searchword">
+		<input type="submit" value="검색">
+	</form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function func04(a,b, ...numbers){
+		document.write('a : ' + a + '<br>');
+		document.write('b : ' + b + '<br>');
+		document.write('numbers : ' + numbers + '<br><br><br><br><br>');
+	}
+	var arr01=[1,2,3];
+	func04(...arr01);
+	func04(...arr01  ,  ...arr01);
+	
+	
+	
+	
+	
+	
+	
+	function func01(a,b,c){
+		document.write(`${ a } : ${ b } : ${ c }<br>`);
+		
+	}
+	function func02(){
+		for(let i of arguments){
+			document.write(i+"  :  ");
+		}
+			document.write('<br>');
+	}
+	function func03(...numbers){
+		console.log(numbers);
+	}
+	
+	
+	var array =[11,22,33];
+	//func01(array);
+	//func01.apply(null, array);
+	//func01(...array);
+	//func03(...array);
+	
+	
+	
+	//func03(10,20,30); 
+	//func02(10,20); 
+	//func02(10,20,30); 
+	//func01(10,20); 
+	//func01(10,20,30); // 세미콜론 생략가능! ASI기능을 가지고 있음
+					//JS 파서들이 추정해서 세미콜론을 붙이고 실행한다.
+					// return 코드부분에서는 조금 조심해야...
+</script>
+</head>
+<body>
+
+</body>
+</html>

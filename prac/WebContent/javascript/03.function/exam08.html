@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var func = function(i) {
+		setTimeout(function() {
+			alert(i);
+		}, 0);
+	}
+
+	for (var i = 0; i < 3; i++) {
+		//	func(i);
+		(function(i) {
+			setTimeout(function() {
+				alert(i);
+			}, 0);
+		})(i);
+	}
+
+	var func = function(i) {
+		return setTimeout(function() {
+			alert(i);
+		}, 0);
+	}
+
+	for (var i = 0; i < 3; i++) {
+		func(i);
+	}
+
+	/*
+	for(var i = 0 ; i<3 ;i++){
+		setTimeout(function() {
+			alert(i);   // 012가 아니라 3만 3번 찍힌다.. 왜?
+		}, 0);          // settimeout 시간을 가지고 뭘 하는것.. 웹브라우저가 이걸 처리. 파서가 브라우저에게 일 넘김
+	}              //모든 코드 다 수행하고 settimeout이 가진걸 하나씩 수행한다. 
+	
+		settimeout 부분은 모든 문법이 수행한 후에 수행한다. 
+		때문에 이미 i는 3이 되어있음. 이 상태에서 alert한다.
+		--> 이럴때 클로저 쓴다. 클로저 형태로 만들어주면 된다. 그럼 이런 문제 없음~~~*/
+
+	/*
+	alert("11....");
+	setTimeout(function() {
+		alert("settimeout");
+	}, 0); // 0이면 지금 당장!!
+	//settimeout은 제어권이 넘어감. 그래서 22를 출력하고 이걸출력하는듯
+	alert("22....");
+	 */
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var span = document.querySelector('span')
+		var h1 = document.querySelector('h1')
+		var div = document.querySelector('div')
+		
+		/*
+			이벤트 버블링? - 풍선 효과처럼 . 상위 까지 이벤트 먹히는 것. 
+					부모를 타고 올라가면서 그 이벤트(이름이 같은 이벤트)가 실행되는것
+		*/
+		span.onclick = function(e){
+			alert('click span,..')
+			//console.log(e) // 마우스 클릭 한 위치 등 다양한 상세한 내역이 표시된다.
+		}
+		h1.onclick = function(e){
+			alert('click h1~~')
+			e.cancelBubble = true; // 여기서 더 올라가지 말고 여기서 끝내!!!!
+			console.log(e) // 마우스 클릭 한 위치 등 다양한 상세한 내역이 표시된다.
+		}
+		div.onclick = function(){
+			alert('click div======')
+		}
+		
+		
+		
+	
+	}
+</script>
+</head>
+<body>
+	<div>
+		<h1>
+			<span>Hello</span>
+		</h1>
+	</div>
+</body>
+</html>

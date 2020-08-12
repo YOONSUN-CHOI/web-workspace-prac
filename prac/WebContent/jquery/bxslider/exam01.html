@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"> <!--  외부 css 파일 import - link 사용!! -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $('.slider').bxSlider({
+    	  mode: 'fade',
+    	  captions: 'true',
+    	  slideWidth: 500
+      });
+    });
+</script>
+</head>
+<body>
+	<div class="slider">
+   		<div><img src="/Lecture-WEB/html/images/dog.png" title="귀여운 루키1"></div>
+		<div><img src="/Lecture-WEB/html/images/a.PNG"  title="귀여운 흰둥이"></div>
+		<div><img src="/Lecture-WEB/html/images/dog2.png" title="귀여운 루키2"></div>
+		<div><img src="/Lecture-WEB/html/images/aa.jpg"  title="귀여운 포메라니안!"></div>
+  	</div>
+</body>
+</html>

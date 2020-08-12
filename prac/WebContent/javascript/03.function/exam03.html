@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function func(a,b,c){
+		alert(`a : ${a}, b : ${b}, c : ${c}`)
+	}
+	
+	function func(a,b,c){ //boolean에서 null, undefined 0 은 false이다.
+		/*
+		if (a == undefined)
+			a=0;
+		if (b == undefined)
+			b=0;
+		if (c == undefined)
+			c=0;
+		*/
+		
+		if(!a) a=0;
+		if(!b) b=0;
+		if(!c) c=0;
+		
+		alert(`a : ${a}, b : ${b}, c : ${c}`)
+	}
+	
+	function func(a,b,c){
+		a = a|| 0;
+		b = b|| 0;
+		c = c|| 0;
+		
+		alert(`a : ${a}, b : ${b}, c : ${c}`)
+	}
+	
+	function func(a=0,b=0,c=0){ // 날라오는 매개변수가 없으면 0(여기서 0으로 초기화했으니까)으로!
+		alert(`a : ${a}, b : ${b}, c : ${c}`)
+	}
+	
+	func();
+	func(10);
+	func(10,20);
+	func(10,20,30);
+</script>
+</head>
+<body>
+
+</body>
+</html>

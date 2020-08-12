@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+		브라우저 객체 모델(BOM)
+		- window (최상위)
+		  - location 객체 - 주소와 관련 - 주소로 가주는것??????
+		  - navigator 객체 - 자주 사용하지 않음
+		  - history 객체 - 앞으로 뒤로 움직일때 이 객체 이용해서 움직인다. 이동에 대한 기록인듯
+		  - screen 객체 - 화면에 대한 객체인듯. width height 이런거...?
+		  - document객체 - html문서와 관련된 객체
+		  - 
+	*/
+	
+	a=10;
+	//alert(a)  // 콘솔에 window 쳐보면 그 하위에 a 가 동적으로 생성된다.
+	
+	//open(); // 팝업같은 새로운 창을 띄어준다. 아무 지정 없음 새창을 생성해서 띄어준다.
+	let sub = open("", "", "width=400, height=300") // sub - open에 대한 결과 값.
+	//alert(sub) // null: 팝업 차단되어있음 이렇게 나온다.
+	
+	if(!sub){ // null이 false이면 (null을 여기선 false로 인식~)
+		alert("팝업 차단을 해제하세요.")
+	}
+	
+	sub.moveTo(100,100) // 위치지정
+	
+	setInterval(function() {
+		sub.moveBy(20, 20) // 매초마다 20,20 씩 이동
+	}, 1000)
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

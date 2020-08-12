@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var a = prompt("정수를 입력하세요");
+	alert(a);
+	alert(typeof a); /* number가 아니고 string이네. prompt의 리턴값은 무조건 string이다!!  */
+	
+	a=Number(a);
+	alert(typeof a); /* number가 아니고 string이네. prompt의 리턴값은 무조건 string이다!!  */
+	
+	var msg = a % 2 == 0 ? "짝수" : "홀수";
+	alert(msg);
+	
+	switch(a%2){
+	case 0 :
+		alert(a+"는 짝수입니다");
+		break;
+	case 1 : 
+		alert(a+"는 홀수입니다");
+		break;
+	}
+	
+	
+</script>
+</head>
+<body>
+	
+</body>
+</html>

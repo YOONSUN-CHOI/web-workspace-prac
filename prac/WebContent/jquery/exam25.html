@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('button').click(function() {
+			//$('img').first().appendTo('body')//자식.first().appendto부모.
+			$('img').last().prependTo('body')// 반대방향으로!
+		})
+	})
+</script>
+</head>
+<body>
+	<button>클릭</button> <br>
+	<img src="/Lecture-WEB/html/images/dog.png">
+	<img src="/Lecture-WEB/html/images/a.PNG">
+	<img src="/Lecture-WEB/html/images/aa.jpg">
+	<img src="/Lecture-WEB/html/images/dog2.png">
+	<br>
+</body>
+</html>

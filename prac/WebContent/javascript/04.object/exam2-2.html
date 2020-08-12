@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var person = {
+		'name' : '홍길동',
+		'phone' : '010-1111-2222',
+		'addr' : '경기도 광명시',
+		'info' : function() { // 익명함수로 function 만든다.			
+			for ( var key in this) { // key에는 속성명만 들어감
+				if ((typeof this[key]) != 'function') 
+					document.write(key + ' : ' + this[key] + '<br>');
+			}
+		}
+	}
+	person.toString = function() {
+		let msg='';
+		for(let key in this){
+			if((typeof this[key]) != 'function')
+				msg += `${key} : ${this[key]}<br>`
+		}
+		return msg;
+	}
+
+	document.write(person.toString());
+
+	document.write('<hr>');
+	document.write(person);
+	document.write('<hr>');
+	document.write('<br><br><br>');
+	with (person) {
+		info(); // 이렇게 하면 person.info()로 알아듣는다.
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	function aaa(){
+		alert("call aaa");
+	}
+	
+	function aaa(data){
+		alert("call aaa(data));
+	}
+	function aaa(a,b){
+		alert("call aaa(a,b));
+	}*/
+	
+	function aaa(){
+		console.log(arguments);
+		switch(arguments.length){
+		case 0 : 
+			alert("call aaa()");
+			break;
+		case 1 :
+			alert("data : "+arguments[0]);
+			break;
+		case 2:
+			alert("a : "+arguments[0] +", b : "+arguments[1]);
+			break;
+		}
+	}
+	aaa(1,20);
+	aaa();
+	aaa("dd");
+	//aaa(10,20,30,40,50); // 맞는거 없어도 맨 밑꺼 호출. 자바스크립트에서는 함수이름만 중요하다.
+</script>
+</head>
+<body>
+
+</body>
+</html>

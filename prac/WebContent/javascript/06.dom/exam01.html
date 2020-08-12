@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log(document.body); //body가 아직 만들어지지않아서 null로 나온다.
+	window.onload = function(){
+		console.log(document.body); //body가 실행 된 이후라서 내가 구성한 내용을 볼 수 있따.
+		//document.write(document.body+'<br>'); // body 내용이 아닌 body객체의 이름이 나온다.
+		alert('innerHTML : '+document.body.innerHTML);// 내용부 뽑아낼때!!!
+			//innerHTML : <body>***</body> ***의 내용을 보는것이다
+		alert('innerHTML : '+document.body.innerText);// 내용부 뽑아낼때!!!
+			//innerText : 태그를 빼고 실제 글자들만 볼  때!
+		
+		let tags = '';
+		tags += '<ul>';
+		tags += '<li>red</li>';
+		tags += '<li>orange</li>';
+		tags += '<li>blue</li>';
+		tags += '</ul>';
+		
+		//document.write(tags); // 개발자 도구 보면 hello, hihi 코드만 보임 - 동적으로 코드가 바뀜
+		//document.body.innerHTML = tags; //<body>tags 코드</body> 이렇게 바디태그내용바꿔  - 태그인식
+				//개발자 도구 보면 ul 코드 부분만 보인다.
+		//document.body.innerText = tags; 
+				//<body>tags 내용</body> 이렇게 바디태그내용바꿔  - 태그를 인식 놉. 걍 text로
+		//document.body.innerHTML += tags; // hello hi에 ul코드까지 전부!!
+		//document.body.innerText += tags; //hello hi에 ul은 태그까지 보이게 
+		document.body.innerHTML += '<br>';
+		document.body.innerText += tags;
+		
+	}
+</script>
+</head>
+<body>
+	Hello<br>
+	<h1>hihihi!!!</h1>
+</body>
+</html>

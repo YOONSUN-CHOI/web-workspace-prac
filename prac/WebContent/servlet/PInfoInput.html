@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>개인 정보 입력</h1>
+	<form action="/prac/pinfoResult">
+		이름 : <input type="text" name="name"><br>
+		아이디 : <input type="text" name="id"><br>
+		패스워드 : <input type="text" name="pwd"><br>
+		성별 : <input type="radio" name="gender" value="male">남자 
+			 <input type="radio" name="gender" value="female">여자<br> 
+		메일 수신 여부 : 공지메일 <input type="checkbox" name="mail" value="mail_first">&nbsp;
+					  광고 메일<input type="checkbox" name="mail" value="mail_sec">&nbsp;
+					 배송 확인 메일<input type="checkbox" name="mail" value="mail_th"><br>
+		직업 :   <select name="job">
+					<optgroup>
+						<option value="com">회사원</option>
+						<option value="stu">학생</option>
+						<option value="etc">기타</option>
+					</optgroup>
+				</select><br>
+		<input type="reset" value="취소">
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>

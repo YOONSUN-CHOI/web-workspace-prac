@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	//객체로 인식!! -  속성 : 이름, 전화번호
+	var person = {
+		//'속성명' : 속성값,
+		//'속성명' : 속성값      이렇게 넣어주기!
+		
+		'name' : '홍길동',
+		phone : '010-1111-2222', // 속성명에 싱글쿼터 생략가능!
+		'phone-home' : '031-607-9917'   // 근데 이런 부분에서는 싱글쿼터 생략하면 앙대~~~ 특수기호!조심!
+	};
+	
+	/*
+	console.log(typeof person); // object라고 나온다.
+	console.log(person); // js에 정의된 형태로 나온다.
+	document.write(person+'<br>'); //object object  라고 나온다. 어찌하면 세부적인것을 볼 수 있을까아
+	document.write("name : "+person.name+'<br>'); // 이렇게 하면 나오네
+	document.write("phone : "+person['phone']+'<br>'); // 이렇게 하면 나오네
+	*/
+	
+	
+	
+	
+	//속성이 있는지 판단 : in!!
+	/*
+	document.write('속성 name 존재 여부 : '+( 'name' in person )+'<br>' );
+	document.write('속성 phone 존재 여부 : '+( 'phone' in person )+'<br>' );
+	document.write('속성 phone-home 존재 여부 : '+( 'phone-home' in person )+'<br>' );
+	document.write('속성 addr 존재 여부 : '+( 'addr' in person )+'<br>' );
+	*/
+	
+	person.addr="경기도 광명시"; // 이렇게 속성추가하면서 값을 넣어줄수있따.
+	document.write('속성 addr 존재 여부 : '+( 'addr' in person )+'<br>' );
+	
+	delete(person.addr);
+	document.write('속성 addr 존재 여부 : '+( 'addr' in person )+'<br>' );
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		let idtag = document.getElementById('id')
+		//idtag.parentNode.removeChild(idtag);
+		idtag.remove(); // 익스플로러에서 remove는 지워지지않는다.
+		
+		
+		
+		
+		pwd = document.getElementById('pwd')
+		// <td id="id" style="color:red; font-size: 20pt; background-color: yellow;">아이디</td> 
+		pwd.style.color = 'red'
+		pwd.style.fontSize = '20pt'
+		pwd.style.backgrondColor = 'yellow'
+		pwd.style['border-style'] = 'dashed'
+		pwd.style['border-color'] = 'blue'
+		console.log(pwd.style['border-width'] = '5px')
+	}
+</script>
+</head>
+<body>
+	<table border="1" style="width: 100px; height: 100px">
+		<tr>
+			<td id="id">ID</td> 
+			<!--  이 태그 지우자
+			1. tr - td#id 인 관계 지우자 id.parentElement, id.parentNode.remoceChild(id)
+			id.remove() - tr하위에 있는 td 다 지워짐
+			
+			 -->
+		</tr>
+		<tr>
+			<td  id="pwd">PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

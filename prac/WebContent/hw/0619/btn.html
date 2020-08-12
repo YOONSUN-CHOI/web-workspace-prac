@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		let increbtn = document.getElementById('increbtn');
+		let incre = document.getElementById('incre');
+		let increcnt = 0;
+		increbtn.onclick = function() {
+			++increcnt;
+			incre.innerHTML = increcnt + "번 클릭"
+		}
+		
+		let decrebtn = document.getElementById('decrebtn');
+		let decre = document.getElementById('decre');
+		let decrecnt = 10;
+		decrebtn.onclick = function() {
+			if (decrecnt > 0)
+				--decrecnt;
+			decre.innerHTML = decrecnt + "번"
+		}
+	}
+</script>
+</head>
+
+<body>
+	<div style="width: 120px; height: 60px; border: 2px solid red;"
+		id="div_main">
+		<table>
+			<tr>
+				<td><input type="button" value="클릭" id="increbtn" class="btn"></td>
+				<td id="incre">0번클릭</td>
+			</tr>
+			<tr>
+				<td id="decre">10번</td>
+				<td><input type="button" value="숫자감소" id="decrebtn"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

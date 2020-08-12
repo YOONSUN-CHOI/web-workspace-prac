@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		alert('ready~')
+		
+		
+		//$(선택자) - 선택한 태그가 선택된다.
+		//$('h1').hide() // .hide() : style속성에 있는 display를 none으로 바꾼다. 아래 주석부분 대신 이렇게 사용가능
+		/* 		
+		let h1Tags = document.getElementsByTagName('h1')
+		for(var i in h1Tags) {
+			h1Tags[i].style.display = 'none'
+		}
+ 		*/	
+ 		
+ 		
+ 		//$('#h01').hide() //특정만. id가 h01인 것!!
+ 		//$('.h02').hide() // class가 h02인것!
+ 		//$('h1.h02').hide() //h1태그 중 class 이름이 h02인것만 선택
+ 		//$('*').hide(); // 와일드. hr을 포함한 모든 태그가 지워진다. *****여기랑
+ 		//$('body > *').hide()   *****여기 좀 더 확인  자식들 중에??
+ 		//$('h1:first').hide() // 첫번째 h1태그만
+ 		$('h1:last').hide()  // 마지막  h1태그만!
+ 		
+	})
+</script>
+</head>
+<body>
+	<hr>
+	<h1 id="h01">Hello</h1>
+	<h1 id="h02">Hi</h1>
+	<h2 class="h02">Good-Bye!</h2>
+	<hr>
+	<h1 class="h01">Hello</h1>
+	<h1 class="h02">Hi</h1>
+</body>
+</html>

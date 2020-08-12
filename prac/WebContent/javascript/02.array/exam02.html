@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var names=["홍기동"," 김디뎡", "홍길순","윤길동","방길동"];
+	
+	alert(names);
+	
+	document.write('방법1<br>');
+	for(var i =0; i< names.length;i++){
+		document.write(names[i]+'<br>');
+		console.log(names[i]);
+	}
+	
+	
+	document.write('<br><br><br>방법2<br>');
+	for(var i in names){
+		document.write(names[i]+'<br>');
+	}
+	document.write('<br><br><br>방법3<br>');
+	for(var name of names){
+		
+		document.write(name+'<br>');
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

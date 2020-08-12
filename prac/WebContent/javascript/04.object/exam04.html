@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function makeperson(name,phone,addr){
+		var p = {
+			'name' : name,
+			phone : phone, // 콜론 왼쪽은 알아서 싱글쿼터 붙여서 속성명으로 인식. 오른쪽은 속성값으로 인식!
+			addr : addr,
+			info : function(){
+				var msg ='';
+				for(let key in this){
+					if(key != 'info')
+						msg += key + ' : ' + this[key] + '<br>';
+				}
+				msg+='<br>';
+				document.write(msg);
+			}
+		}
+		return p;
+	}
+	
+	/*
+	var person = makeperson('홍길동','010-9438-8534','경기도 광명시');
+	person.info();
+	*/
+	
+	let persons = [];
+	persons.push(makeperson('홍길동','010-9438-8534','경기도 광명시'));
+	persons.push(makeperson('김길동','010-9243-8534','경기도 분당시'));
+	
+	for(let i in persons){
+		persons[i].info();
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

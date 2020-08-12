@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var tag = document.createElement('h1');
+		var tagText =document.createTextNode("helloooo~~~") // 태그의 엘리먼트로 태그의 자식
+		console.log(tag);
+		console.log(tagText);
+		tag.appendChild(tagText); // 태그랑 엘리먼트 부모자식관계로 이어줌
+		document.body.appendChild(tag); //tag와 body 부모자식관계로이어줌
+		
+		
+		
+		
+		
+		var imgtag = document.createElement('img');
+		//console.log(imgtag);
+		imgtag.src="https://image-notepet.akamaized.net/resize/620x-/seimage/20190705%2Fe27cebc225522c819b00f7f2613a261a.jpg";
+		<!--document.body.appendChild(imgtag); //imgtag와 body 부모자식관계 로이어줌-->
+		
+		
+		var atag = document.createElement('a');
+		atag.href="https://naver.com";		
+		document.body.appendChild(atag); // body부모 a태그 자식으로 연결
+		atag.setAttribute('target','_blank')  // target 속성 setting 하기
+		atag.appendChild(imgtag);
+	}
+</script>
+</head>
+<body>
+	<!--  <h1>Hello</h1>  // 이거 위에서 만들어보자!! -->
+	<!-- 여기서 img 태그 사용하는것처럼 만들어보자! 
+		img태그의 src는 부모 자식 관계 아니고 동등한 관계에서의 속성입!!!
+	-->
+</body>
+</html>

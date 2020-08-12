@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+		자바스크립트 내장함수
+		1. 타이머. 
+			setTimeout(함수, 밀리초)
+			clearTimeout(id)
+			setInterval(함수, 밀리초) - return : 프로세스 id
+			clearInterval(프로세스 id)
+	*/
+	
+	/*
+	setTimeout(function(){
+		alert("3초 지남");			
+	}, 3000);
+	*/
+	
+	var id = setInterval(function(){
+		document.write(new Date+"<br>")
+	},1000);
+	
+	setTimeout(function(){
+		clearInterval(id);
+	},10000);
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

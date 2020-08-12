@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Person(name,phone,addr){
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+		
+		this.info = function(){
+			var msg='';
+			for(let key in this){
+				if((typeof this[key]) != 'function')
+					msg += key + ' : ' + this[key] + '<br>';
+			}
+			document.write(msg);
+		}
+	}
+	
+	var p = new Person('홍길동','010-1111-2222', '경기도 광명시'); // person형으로 생성된다. 
+	console.log(p);
+	p.info();
+	
+	var p2 = new Person('최윤선','010-9458-2222', '경기도 성남시'); // person형으로 생성된다. 
+	console.log(p2);
+	p2.info();
+	
+	var p3 = new Person(); // person형으로 생성된다. 
+	console.log(p3);
+	p3.info();
+	
+	Person.prototype.aaa = function() { // 프로토타입 정의! 동적으로 추가하는 거라서 이 이전에 쓰면 앙댐!
+		alert('aaa');
+	}
+	//console.log(p);
+	p.aaa(); //선언할때만 prototype라고 써주고 사용은 원래 하던방식으로!!
+	p2.aaa();
+	
+	//document.write((p instanceof Person)+'<br>');
+	//document.write((p instanceof Object)+'<br>');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

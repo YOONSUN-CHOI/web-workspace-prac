@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [10,20,30,40];
+	var copyarr = arr;   //참조변수를 복사   얕은복사. shallow copy
+	var copyarr2 = [];  // for문으로 데이터 하나하나 push 할꺼임
+	var copyarr3 = [...arr];
+	
+	
+	
+	
+	document.write('arr : '+arr+'<br>');
+	document.write('copyarr : '+copyarr+'<br>');
+	document.write('<hr>');
+	
+	
+	
+	copyarr[2]=1000;
+	document.write('arr : '+arr+'<br>');
+	document.write('copyarr : '+copyarr+'<br>');
+	document.write('<hr>');  // 참조변수가 같은곳을 가리킴 . 
+	
+	
+	arr = [10,20,30,40]; // test를 위한 reset!
+	for (let data of arr){  // 깊은복사. deep copy. 참조변수가 아닌 값을 복사하는 것이다.
+		copyarr2.push(data);
+	}
+	
+	
+	copyarr2[2]=1000;  // test하자
+	document.write('arr : '+arr+'<br>');
+	document.write('copyarr2 : '+copyarr2+'<br>');
+	document.write('<hr>');  // 깊은복사.
+	
+	
+	copyarr3[2]=1000;  // test하자
+	document.write('arr : '+arr+'<br>');
+	document.write('copyarr3 : '+copyarr3+'<br>');
+	document.write('<hr>');  // 깊은복사.
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

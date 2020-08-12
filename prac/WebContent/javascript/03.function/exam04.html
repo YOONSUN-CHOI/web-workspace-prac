@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function returnfunc(name){
+		var msg = name+"님 반갑습니다."; // msg 함수내의 지역변수 느낌쓰
+		return function(){ //익명함수 리턴    // 클로져라고?? - 익명함수가 종료될때까지 msg가 사라지지않는다. -> 유지된다.
+						// 클로져 쓰는 이유? 변수의 scope때문이라고? msg라는 변수 값을 유지하고 싶어서. global 인것처럼 쓰고싶
+			alert(msg);
+		};
+	}
+	
+	returnfunc("홍길동")();  // 리턴값이 함수!
+	
+	
+	var f = returnfunc("김길동");
+	f();  
+	//alert(m);
+</script>
+</head>
+<body>
+
+</body>
+</html>

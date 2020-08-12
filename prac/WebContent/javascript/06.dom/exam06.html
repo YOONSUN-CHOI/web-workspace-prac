@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function clickTimer() {
+		setTimeout(function() {
+			alert('3초 지났습니다')
+		}, 3000)
+		
+	}
+	
+	window.onload = function() {
+		let btn = document.getElementById('clickBtn')
+		
+		// 고전적 이벤트모델
+		btn.onclick = function() {
+			alert('click btn...')
+		}
+		
+		
+		
+		var tag = document.createElement('h1');
+		var tagText =document.createTextNode("clickme~~~") // 태그의 엘리먼트로 태그의 자식
+		//console.log(tag);
+		//console.log(tagText);
+		tag.onclick = function() {
+			alert('click h1!!!!!!!...')
+		}
+		tag.appendChild(tagText); // 태그랑 엘리먼트 부모자식관계로 이어줌
+		document.body.appendChild(tag); //tag와 body 부모자식관계로이어줌
+		
+		
+		
+		
+		
+	}
+</script>
+</head>
+<body>
+	<!-- 인라인 이벤트모델  -->
+	<input type="button" value="클릭" onclick="alert('click...')">
+	<input type="button" value="3초타이머" onclick="clickTimer()">
+	<input type="button" value="클릭2" id="clickBtn">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

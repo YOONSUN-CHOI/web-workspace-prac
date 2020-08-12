@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//반환형 메소드명(파라미터){} 지금까지
+	
+	//function 함수명(파라미터){} 자바스크립트는 요방식. 반환형이 없다.
+	//자바스크립트는 다  자료형이 var형이라서 딱히 써주지 않는다.
+	//마찬가지로 파라미터도 다 var형이라서 파라미터 이름만 써주고 자료형은 쓰지 않는다.
+	
+	
+	function testfunc(){ // window라는 객체 속에 만들어짐       오버로딩 지원하지 않음 - 함수이름으로 구분!	
+		alert('call....');
+	}
+	
+	function testfunc2(num){ //  오버로딩 지원하지 않음 - 함수이름으로 구분!	
+		alert(num);
+	}
+	function testfunc3(data1, data2){ //  오버로딩 지원하지 않음 - 함수이름으로 구분!	
+		alert(data1 +" , " +data2);
+	}
+	
+	function sum(a,b){
+		return a+b;
+	}
+	
+	var temp = function func(){  // temp는 리턴 값 아니다!!!!
+		alert('call func');
+	}
+	
+	var func01 = function(){ // 익명함수. 함수 리터럴??? 선언!  익명함수는 함수 호이스팅 앙댐!!
+								// 선언적 함수만 함수 호이스팅 가능!!
+								// 같은 이름의 익명과 선언적 함수가 있을 때, 우선순위는 익명함수가 더 높다.
+		alert('call func01....');
+	}
+	
+	function getSum(a,b){
+		let s = 0;
+		while(a<=b){
+			s+= a++;
+		}
+		return s;
+	}
+	
+	function printSum(a,b){
+		//alert("총합 : " + getSum(a,b));
+		
+		function sum(a,b){   // 자바스크립트는 내부에서만 동작하는 함수를 더 만들 수 있따!!
+			let s = 0;       // 위에 sum 함수가 있어도 여기서 하는게 더 우선순위가 높은가보다...
+			while(a<=b){
+				s += a++;
+			}
+			return s;
+		}
+		alert("1~10 사이의 총합 : "+sum(a,b));
+	}
+
+	
+	function callbackfunc(f){  // 인자로 함수를 받을 수 있따. 반대로 리턴타입으로 함수를 받을수도 있음!
+		f();
+	}
+	
+	
+	///////////////////////////함수 호출부.//../////////////////////
+	callbackfunc(function (){
+		alert("익명함수 호출...");
+	});
+	
+	callbackfunc(aaa);
+	callbackfunc(temp);
+	
+	//var total = getSum(1,10);
+	//alert("총합 : " + total);
+	printSum(1,10);
+	
+	
+	
+	func01();
+	
+	//func(); // 이렇게 호출 앙댐.
+	temp();
+	
+	var total = sum(15,65);
+	alert(`total = ${total}`);
+	
+	testfunc();
+	testfunc2(100);
+	testfunc2("Hello");
+	testfunc3("a", 12.34);
+</script>
+</head>
+<body>
+
+</body>
+</html>

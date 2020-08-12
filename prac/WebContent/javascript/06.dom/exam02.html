@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var id = document.getElementById('id');
+		//console.log(id);
+		id.innerHTML = '아이디';
+		
+		
+		var id2 = document.querySelector('#id'); // id가 id 인것을 찾는다.
+		id2.innerHTML = '아이디!!!';
+		
+		var password = document.querySelector('.pwd');
+		//console.log(password)
+		password.innerHTML = 'pwdpwd';
+		
+		
+		var arrr = document.querySelector('td');
+		console.log(arrr); // 왜 id 만 나오지???? pw는...? - 쿼리 셀렉터에 의해 맨 첫번째 것 1개만 잡아오기 때문이다. 
+		var arrr = document.querySelectorAll('td');
+		console.log(arrr); // 복수개
+		arrr[1].innerHTML = '패스워드으';
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+	<table border="1" style="width:100px; height: 100px">
+		<tr>
+			<td id="id">ID</td> <!--  td 태그 중 id인 것을 알기위해   #{}는 css에서 -->
+		</tr>
+		<tr>
+			<td class="pwd">PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

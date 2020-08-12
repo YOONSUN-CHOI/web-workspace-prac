@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	} 
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		/* 
+		$('div').css({
+			width: '100px',
+			height : '100px',
+			'background-color': 'red'
+		})
+		 */
+		 
+		 $('div').hide(1000) // 왼쪽 상단에 1초만에 사라짐
+		 $('div').show(1000)//  왼쪽 상당에서 초만에 사라짐
+		 
+		 $('div').fadeOut(1000)
+		 $('div').fadeIn(1000)
+		 $('div').fadeTo(1000 ,0.4);
+
+		 $('div').fadeToggle(1000);
+		 
+		 //hide와 쇼
+		 
+		 
+	})
+</script>
+</head>
+<body>
+	<!-- <div style="width: 100px; height: 100px; background-color: red;"></div> -->
+	<div></div>
+</body>
+</html>
+
+
+
+
+

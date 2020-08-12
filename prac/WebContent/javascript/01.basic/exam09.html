@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	//★★★★★★Hoisting(호이스팅!!★★★★)
+	// 선언부가 올라감. 대입부는 아님!!! 함수도 마찬가지
+	// javascript parser가 호이스팅을 한다. 하지만 복잡해짐.
+	// ECMAScript6부터 var가 아닌 다른거를 만들었다.
+	// let a =1;
+	// const a=10;
+	
+	var a = 10;    // 위에 var a; 가 생기고 이 줄은 실제로 a=10;
+	let b = 20;
+	const c = 30;
+	
+	alert(`a=${a} , b=${b}, c=${c}`);
+	
+	a = a*5;
+	b = b*5;
+	//c = c*5;
+	alert(`a=${a} , b=${b}, c=${c}`); // 왜 앙나올까???????????????
+			// c 때문이다. const는 상수형태이기 때문에 대입이 앙댄다.
+			// c 부분 주석처리하고 다시 실행하면 나온다!!!
+	
+	var a = 100;   // 호이스팅으로 선언은 위에 있고 실제로는 a=100;
+	//let b = 100;   // let은 호이스팅 없음. 위에 선언된 것을 또 선언해서 오류!!   <재선언금지>
+	alert(`a=${a} , b=${b}, c=${c}`); // 왜 앙나올까???????????????
+			// var는 호이스팅이라 선언을 위로 끌어올린다. 
+			// b 부분 주석처리하고 다시 실행하면 나온다!!
+	
+	{
+		var temp = 1000;
+		let lettemp = 2000;
+		alert(`temp = ${temp}, lettemp = ${lettemp} `);
+		
+	}
+	alert(`temp = ${temp}, lettemp = ${lettemp} `); // 왜 앙대지?
+			// error :  lettemp is not define....
+			// var은 함수 scope! -> 에러 없음
+			// let, const는 블럭 scope! -> lettemp에서 에러난다.
+	
+	
+	
+	
+	/*
+	var a;
+	var b;
+	
+	a=100;
+	alert(a);
+	b="Hello";
+	alert(b);
+
+
+//------------------------
+	num=100;
+	alert(num);
+	var num;
+	alert(num+20);
+	//------------------------
+	var num;
+	num=100;
+	alert(num);
+	alert(num+20);
+	*/
+</script>
+</head>
+<body>
+
+</body>
+</html>
